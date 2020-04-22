@@ -2,18 +2,19 @@
   <div id="basic">
     <div class="">
       <h3 class="header">
-        Table Showing Animation
+        Custom Paginated Table
       </h3>
       <p>
-        A basic table showing animation. This happens when the row is an empty array.
+        A basic table showing how to custom paginate the table
       </p>
 
       <vue-markdown 
         source="
         <data-table 
-            title='Loading table'
+            title='Custom Paginated table'
             :columns='tableColumns1'
             :rows='tableRows1' 
+            :perPage='[3, 5, 10]'
         />"
       >
       </vue-markdown>
@@ -25,7 +26,9 @@ data() {
         tableColumns1: [
             ...
         ],
-        tableRows1: [],
+        tableRows1: [
+            ...
+        ],
     };
 },
 ```"
@@ -36,11 +39,11 @@ data() {
     <h4>Result</h4>
     <hr>
     <data-table
-        title="Loading Table"
+        title="Custom Paginated table"
         :columns="tableColumns1"
         :rows="tableRows1"
+        :perPage='[3, 5, 10]'
     />
-    <i style="color:red">***NOTE: This animation can be disabled by setting the loadingAnimation prop to false. 'loadingAnimation: "false"' ***</i>
     </div>
   </div>
 </template>
@@ -77,7 +80,32 @@ export default {
             html: false,
             },
         ],
-      tableRows1: [],
+      tableRows1: [
+           {
+            firstName: 'Bill',
+            lastName: 'Gates',
+            company: 'Microsoft',
+            city: 'Seattle',
+            },
+            {
+            firstName: 'Steve',
+            lastName: 'Jobs',
+            company: 'Apple',
+            city: 'San Francisco',
+            },
+            {
+            firstName: 'Larry',
+            lastName: 'Page',
+            company: 'Google',
+            city: 'East Lansing',
+            },
+            {
+            firstName: 'Mark',
+            lastName: 'Zuckerberg',
+            company: 'Facebook',
+            city: 'White Plains',
+            },
+        ],
     };
   },
   components: {

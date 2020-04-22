@@ -24,6 +24,89 @@
           class="octo-body"
         /></svg
     ></a>
+
+    <div class="col-md-12 row">
+        <div class="col-md-4">
+          <div class="wrapper">
+            <!-- Sidebar -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Table of Content</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Page 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 2</a>
+                            </li>
+                            <li>
+                                <a href="#">Page 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+        <div class="col-md-8">
+           <div
+            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
+          >
+            <div>
+              <basic-table></basic-table>
+            </div>
+            <div>
+              <clickable-table></clickable-table>
+            </div>
+            <div>
+              <minimal-table></minimal-table>
+            </div>
+            <div>
+              <table-with-buttons></table-with-buttons>
+            </div>
+            <div>
+              <table-with-checkboxes></table-with-checkboxes>
+            </div>
+            <div>
+              <customized-table></customized-table>
+            </div>
+            <div>
+              <Loading-animation-table></Loading-animation-table>
+            </div>
+            <div>
+              <custom-pagination-table></custom-pagination-table>
+            </div>
+          </div>
+        </div>
+    </div>
     <header>
       <div class="container">
         <a
@@ -82,73 +165,7 @@
 
       <div class="container">
         <div id="minimal" class="row scrollspy" style="margin-bottom: 0;">
-          <div
-            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-          >
-            <div>
-              <basic-table></basic-table>
-            </div>
-            <div>
-              <clickable-table></clickable-table>
-            </div>
-            <div>
-              <minimal-table></minimal-table>
-            </div>
-            <div>
-              <table-with-buttons></table-with-buttons>
-            </div>
-            <div>
-              <table-with-checkboxes></table-with-checkboxes>
-            </div>
-            <div>
-              <customized-table></customized-table>
-            </div>
-            <div>
-              <Loading-animation-table></Loading-animation-table>
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="custom-pagination"
-          class="row scrollspy"
-          style="margin-bottom: 0;"
-        >
-          <div
-            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-          >
-            <h3 class="header">
-              Custom pagination
-            </h3>
-            <p>Table with custom amount of rows on every page.</p>
-            <div language="html">
-              &lt;datatable title="Table with custom pagination"
-              :columns="tableColumns1" :rows="tableRows4" :perPage="[3, 5, 10]"
-              /&gt;
-            </div>
-            <div language="javascript">
-              data() { return { tableRows4: [ { charName: "Abu",
-              firstAppearance: "Alladin (1992)", createdBy: "Joe Grant",
-              voicedBy: "Frank Welker" }, { charName: "Magic Carpet",
-              firstAppearance: "Alladin (1992)", createdBy: "Randy Cartwright",
-              voicedBy: "N/A" }, { charName: "The Sultan", firstAppearance:
-              "Alladin (1992)", createdBy: "Navid Negahban", voicedBy: "Douglas
-              Seale" }, { charName: "Razoul", firstAppearance: "Alladin (1992)",
-              voicedBy: "Jim Cummings" }, { charName: "Fazahl", firstAppearance:
-              "Alladin (1992)", voicedBy: "Jim Cummings" }, { charName: "Hakim",
-              firstAppearance: "Alladin (1992)", voicedBy: "Numan Acar" }, {
-              charName: "Zagoolien", firstAppearance: "Alladin (1992)",
-              voicedBy: "Jeff Bennett" }, { charName: "The Peddler",
-              firstAppearance: "Alladin (1992)", voicedBy: "Frank Welker" } ], }
-              }
-            </div>
-            <datatable
-              title="Table with custom pagination"
-              :columns="tableColumns1"
-              :rows="tableRows4"
-              :per-page="[3, 5, 10]"
-            />
-          </div>
+         
         </div>
 
         <div id="row-buttons" class="row scrollspy" style="margin-bottom: 0;">
@@ -232,6 +249,7 @@ import TableWithButtons from './TableWithButtons';
 import TableWithCheckboxes from './TableWithCheckboxes';
 import CustomizedTable from './CustomizedTable';
 import LoadingAnimationTable from './LoadingAnimationTable';
+import CustomPaginationTable from './CustomPaginationTable';
 
 export default {
   name: 'Index',
@@ -244,7 +262,8 @@ export default {
     TableWithButtons,
     TableWithCheckboxes,
     CustomizedTable,
-    LoadingAnimationTable
+    LoadingAnimationTable,
+    CustomPaginationTable
   },
   data() {
     return {

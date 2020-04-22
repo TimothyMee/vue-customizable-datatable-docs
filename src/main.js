@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue';
 import './assets/css/main.css';
 import './assets/css/prism.css';
+import './assets/css/mystyle.css';
 // import './assets/css/bulma.css';
 // import 'prismjs'
 // import 'prismjs/themes/prism.css'
