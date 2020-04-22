@@ -20,7 +20,7 @@
             :exactSearch='false'
             :searchable='false'
             :paginate='false'
-            :exportable='false'
+            :exportToExcel='false'
             :printable='false'
         />"
       >
@@ -54,7 +54,7 @@ data() {
         :exactSearch='false'
         :searchable='false'
         :paginate='false'
-        :exportable='false'
+        :exportToExcel='false'
         :printable='false'
     />
     </div>
