@@ -7,10 +7,14 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "vue": "^2.6.11"
+    "babel-runtime": "^6.26.0",
+    "vue": "^2.6.11",
+    "vue-markdown": "^2.2.4",
+    "vuejs-datatable": "file:../vuejs-datatable"
   },
   "devDependencies": {
     "@vue/cli-service": "~4.3.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0"
   }
 }
