@@ -103,6 +103,9 @@
             <div>
               <customized-table></customized-table>
             </div>
+            <div>
+              <Loading-animation-table></Loading-animation-table>
+            </div>
           </div>
         </div>
 
@@ -228,6 +231,7 @@ import MinimalTable from './MinimalTable';
 import TableWithButtons from './TableWithButtons';
 import TableWithCheckboxes from './TableWithCheckboxes';
 import CustomizedTable from './CustomizedTable';
+import LoadingAnimationTable from './LoadingAnimationTable';
 
 export default {
   name: 'Index',
@@ -240,6 +244,7 @@ export default {
     TableWithButtons,
     TableWithCheckboxes,
     CustomizedTable,
+    LoadingAnimationTable
   },
   data() {
     return {

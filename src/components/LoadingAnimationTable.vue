@@ -36,7 +36,7 @@ data() {
     <h4>Result</h4>
     <hr>
     <data-table
-        title="Basic table"
+        title="Loading Table"
         :columns="tableColumns1"
         :rows="tableRows1"
     />
