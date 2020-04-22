@@ -14,7 +14,7 @@
       <vue-markdown 
         source="
         <data-table 
-            title='Basic table'
+            title='Clickable table'
             :columns='tableColumns1'
             :rows='tableRows1' 
             v-on:row-click='onRowClick'
@@ -28,48 +28,54 @@ data() {
     return {
         tableColumns1: [
             {
-            label: 'Character name',
-            field: 'charName',
+            label: 'First name',
+            field: 'firstName',
             numeric: false,
             html: false,
             },
             {
-            label: 'First appearance',
-            field: 'firstAppearance',
+            label: 'Last Name',
+            field: 'lastName',
             numeric: false,
             html: false,
             },
             {
-            label: 'Created by',
-            field: 'createdBy',
+            label: 'Company',
+            field: 'company',
             numeric: false,
             html: false,
             },
             {
-            label: 'Voiced by',
-            field: 'voicedBy',
+            label: 'City',
+            field: 'city',
             numeric: false,
             html: false,
             },
         ],
         tableRows1: [
             {
-            charName: 'Abu',
-            firstAppearance: 'Alladin (1992)',
-            createdBy: 'Joe Grant',
-            voicedBy: 'Frank Welker',
+            firstName: 'Bill',
+            lastName: 'Gates',
+            company: 'Microsoft',
+            city: 'Seattle',
             },
             {
-            charName: 'Magic Carpet',
-            firstAppearance: 'Alladin (1992)',
-            createdBy: 'Randy Cartwright',
-            voicedBy: 'N/A',
+            firstName: 'Steve',
+            lastName: 'Jobs',
+            company: 'Apple',
+            city: 'San Francisco',
             },
             {
-            charName: 'The Sultan',
-            firstAppearance: 'Alladin (1992)',
-            createdBy: 'Navid Negahban',
-            voicedBy: 'Douglas Seale',
+            firstName: 'Larry',
+            lastName: 'Page',
+            company: 'Google',
+            city: 'East Lansing',
+            },
+            {
+            firstName: 'Mark',
+            lastName: 'Zuckerberg',
+            company: 'Facebook',
+            city: 'White Plains',
             },
         ],
     };
@@ -77,8 +83,9 @@ data() {
 methods:{
   onRowClick(row) {
     //row - is the row clicked on
-    //open a modal or do anything with the row 
-    console.log('open modal');
+    //open a modal or do anything with the row
+    //for example alert firstName 
+    alert(row.firstName);
   },
 },
 ```"
@@ -89,7 +96,7 @@ methods:{
     <h4>Result</h4>
     <hr>
     <data-table
-        title="Basic table"
+        title="Clickable table"
         :columns="tableColumns1"
         :rows="tableRows1"
         v-on:row-click='onRowClick'
@@ -98,7 +105,7 @@ methods:{
 
 
     <!-- the modal -->
-    <div class="modal" :class="moreClasses">
+    <!-- <div class="modal" :class="moreClasses">
       <div class="modal-background"></div>
       <div class="modal-content">
         <table>
@@ -111,7 +118,7 @@ methods:{
         <input type="text" class="input" />
       </div>
       <button class="modal-close" @click="hideModal()"></button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -121,58 +128,65 @@ import VueMarkdown from 'vue-markdown';
 export default {
   data() {
     return {
-      tableColumns1: [
+       tableColumns1: [
         {
-          label: 'Character name',
-          field: 'charName',
-          numeric: false,
-          html: false,
+        label: 'First name',
+        field: 'firstName',
+        numeric: false,
+        html: false,
         },
         {
-          label: 'First appearance',
-          field: 'firstAppearance',
-          numeric: false,
-          html: false,
+        label: 'Last Name',
+        field: 'lastName',
+        numeric: false,
+        html: false,
         },
         {
-          label: 'Created by',
-          field: 'createdBy',
-          numeric: false,
-          html: false,
+        label: 'Company',
+        field: 'company',
+        numeric: false,
+        html: false,
         },
         {
-          label: 'Voiced by',
-          field: 'voicedBy',
-          numeric: false,
-          html: false,
+        label: 'City',
+        field: 'city',
+        numeric: false,
+        html: false,
         },
       ],
       tableRows1: [
         {
-          charName: 'Abu',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Joe Grant',
-          voicedBy: 'Frank Welker',
+        firstName: 'Bill',
+        lastName: 'Gates',
+        company: 'Microsoft',
+        city: 'Seattle',
         },
         {
-          charName: 'Magic Carpet',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Randy Cartwright',
-          voicedBy: 'N/A',
+        firstName: 'Steve',
+        lastName: 'Jobs',
+        company: 'Apple',
+        city: 'San Francisco',
         },
         {
-          charName: 'The Sultan',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Navid Negahban',
-          voicedBy: 'Douglas Seale',
+        firstName: 'Larry',
+        lastName: 'Page',
+        company: 'Google',
+        city: 'East Lansing',
+        },
+        {
+        firstName: 'Mark',
+        lastName: 'Zuckerberg',
+        company: 'Facebook',
+        city: 'White Plains',
         },
       ],
+
     };
   },
   methods:{
     onRowClick(row) {
       this.moreClasses = "is-active";
-      console.log("open modal", row);
+      alert(row.firstName);
     },
     hideModal() {
       this.moreClasses = "";

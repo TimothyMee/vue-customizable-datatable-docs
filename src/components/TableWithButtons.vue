@@ -2,22 +2,43 @@
   <div id="basic">
     <div class="">
       <h3 class="header">
-        Basic Table
+        Table With Buttons
       </h3>
       <p>
-        Basic example with <span class="grey lighten-2">sorting</span>,
-        <span class="grey lighten-2">pagination</span>,
-        <span class="grey lighten-2">printing</span>,
-        <span class="grey lighten-2">excel export</span> turned on by default.
+        Table with custom buttons
       </p>
 
       <vue-markdown 
         source="
         <data-table 
-            title='Basic table'
+            title='Table With Custom Buttons'
             :columns='tableColumns1'
             :rows='tableRows1' 
-        />"
+        >
+          <th slot='thead-tr'>
+            Actions
+          </th>
+          <template slot='tbody-tr'>
+            <td>
+              <button
+                class='btn btn-default'
+              >
+                Edit
+              </button>
+
+              <button
+                class='btn btn-danger'
+              >
+                Delete
+              </button>
+              <button
+                class='btn btn-info'
+              >
+                View Holdings
+              </button>
+            </td>
+          </template>
+        </data-table>"
       >
       </vue-markdown>
 
@@ -26,56 +47,10 @@
 data() {
     return {
         tableColumns1: [
-            {
-            label: 'First name',
-            field: 'firstName',
-            numeric: false,
-            html: false,
-            },
-            {
-            label: 'Last Name',
-            field: 'lastName',
-            numeric: false,
-            html: false,
-            },
-            {
-            label: 'Company',
-            field: 'company',
-            numeric: false,
-            html: false,
-            },
-            {
-            label: 'City',
-            field: 'city',
-            numeric: false,
-            html: false,
-            },
+          ...
         ],
         tableRows1: [
-            {
-            firstName: 'Bill',
-            lastName: 'Gates',
-            company: 'Microsoft',
-            city: 'Seattle',
-            },
-            {
-            firstName: 'Steve',
-            lastName: 'Jobs',
-            company: 'Apple',
-            city: 'San Francisco',
-            },
-            {
-            firstName: 'Larry',
-            lastName: 'Page',
-            company: 'Google',
-            city: 'East Lansing',
-            },
-            {
-            firstName: 'Mark',
-            lastName: 'Zuckerberg',
-            company: 'Facebook',
-            city: 'White Plains',
-            },
+          ...
         ],
     };
 },
@@ -87,10 +62,34 @@ data() {
     <h4>Result</h4>
     <hr>
     <data-table
-        title="Basic table"
+        title="Table With Custom Buttons"
         :columns="tableColumns1"
         :rows="tableRows1"
-    />
+    >
+          <th slot='thead-tr'>
+            Actions
+          </th>
+          <template slot='tbody-tr'>
+            <td>
+              <button
+                class='btn btn-default'
+              >
+                Edit
+              </button>
+
+              <button
+                class='btn btn-danger'
+              >
+                Delete
+              </button>
+              <button
+                class='btn btn-info'
+              >
+                View Holdings
+              </button>
+            </td>
+           </template>
+      </data-table>
     </div>
   </div>
 </template>

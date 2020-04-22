@@ -91,184 +91,21 @@
             <div>
               <clickable-table></clickable-table>
             </div>
-            <h3 class="header">
-              Minimal table
-            </h3>
-            <p>
-              Table with all possible options set to
-              <span class="grey lighten-2">false</span>
-            </p>
-            <div language="html">
-              &lt;datatable title="Minimal table" :columns="tableColumns1"
-              :rows="tableRows1" :clickable="false" :sortable="false"
-              :exactSearch="false" :searchable="false" :paginate="false"
-              :exportable="false" :printable="false" /&gt;
+            <div>
+              <minimal-table></minimal-table>
             </div>
-            <p>
-              Dont forget to set
-              <span class="grey lighten-2">:rows</span>
-              and
-              <span class="grey lighten-2">:columns</span>
-              in your
-              <span class="grey lighten-2">data()</span>!
-            </p>
-            <datatable
-              title="Minimal table"
-              :columns="tableColumns1"
-              :rows="tableRows1"
-              :clickable="false"
-              :sortable="false"
-              :exact-search="false"
-              :searchable="false"
-              :paginate="false"
-              :exportable="false"
-              :printable="false"
-            />
+            <div>
+              <table-with-buttons></table-with-buttons>
+            </div>
+            <div>
+              <table-with-checkboxes></table-with-checkboxes>
+            </div>
+            <div>
+              <customized-table></customized-table>
+            </div>
           </div>
         </div>
-        <div id="localization" class="row scrollspy" style="margin-bottom: 0;">
-          <div
-            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-          >
-            <h3 class="header">
-              Localization
-            </h3>
-            <p>
-              Specified language of table controls with
-              <span class="grey lighten-2">locale</span> prop.
-            </p>
-            <div language="html">
-              &lt;datatable title="Localized table" :columns="tableColumns1"
-              :rows="tableRows2" locale="es" /&gt;
-            </div>
-            <div language="javascript">
-              tableRows2: [ { charName: "Abu", firstAppearance: "Alladin
-              (1992)", createdBy: "Joe Grant", voicedBy: "Frank Welker" }, {
-              charName: "Magic Carpet", firstAppearance: "Alladin (1992)",
-              createdBy: "Randy Cartwright", voicedBy: "N/A" }, { charName: "The
-              Sultan", firstAppearance: "Alladin (1992)", createdBy: "Navid
-              Negahban", voicedBy: "Douglas Seale" } ]
-            </div>
-            <datatable
-              title="Localized table"
-              :columns="tableColumns1"
-              :rows="tableRows2"
-              locale="es"
-            />
-          </div>
-        </div>
-        <div id="interactive" class="row scrollspy" style="margin-bottom: 0;">
-          <div
-            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-          >
-            <h3 class="header">
-              Interactive rows
-            </h3>
 
-            <p>
-              Table with interactive rows, REACTing &#128064; on every click
-              with materialize modal window.
-            </p>
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal">
-              <div class="modal-content">
-                <h4>{{ currentModalTitle }}</h4>
-                <p>{{ currentModalText }}</p>
-              </div>
-              <div class="modal-footer">
-                <a
-                  href="#!"
-                  class="modal-close waves-effect waves-green btn-flat"
-                  >Ok</a
-                >
-              </div>
-            </div>
-            <div language="html">
-              &lt;datatable title="Click on row!" :columns="tableColumns1"
-              :rows="tableRows3" v-on:row-click="onRowClick" /&gt;
-            </div>
-            <p>
-              Setting html code of modal Materialize window anywhere in the
-              code.
-              <a href="https://materializecss.com/modals.html" target="_blank"
-                >More info</a
-              >.
-            </p>
-            <div language="html">
-              &lt;div id="modal1" class="modal"&gt; &lt;div
-              class="modal-content"&gt; &lt;h4&gt;{{
-                currentModalTitle
-              }}&lt;/h4&gt; &lt;p&gt;{{ currentModalText }}&lt;/p&gt;
-              &lt;/div&gt; &lt;div class="modal-footer"&gt; &lt;a
-              class="modal-close waves-effect waves-green btn-flat"
-              href="#!"&gt; Ok &lt;/a&gt; &lt;/div&gt; &lt;/div&gt;
-            </div>
-            <p>Set row content and data variables for modal windows.</p>
-            <div language="javascript">
-              data () { return { currentModalTitle: "", currentModalText: "",
-              tableRows3: [ { charName: "Abu", firstAppearance: "Alladin
-              (1992)", createdBy: "Joe Grant", voicedBy: "Frank Welker", desc:
-              "Abu is Aladdin's kleptomaniac monkey partner with a high-pitched
-              voice and can talk a little. The animators filmed monkeys at the
-              San Francisco Zoo to study the movements Abu would have. The
-              character is based on the similarly named Abu the thief, played by
-              Sabu Dastagir in the 1940 version of The Thief of Bagdad. Abu also
-              appears in Kingdom Hearts and Kingdom Hearts II, playing a large
-              role in the latter with his kleptomanic habits getting him into
-              trouble during Sora's first return visit to Agrabah." }, {
-              charName: "Magic Carpet", firstAppearance: "Alladin (1992)",
-              createdBy: "Randy Cartwright", voicedBy: "N/A", desc: 'The Magic
-              Carpet is an ancient carpet that was found by Aladdin in the Cave
-              of Wonders treasure room. It is a character without a voice, and
-              expresses itself entirely through pantomime and movements. It is
-              genderless, but is often assumed to be male by Genie and other
-              characters. It is playful, as it reacts with Abu, intelligent, as
-              it beats Genie at chess (and most other things), and helpful, as
-              it helps Aladdin romance Princess Jasmine during the song "A Whole
-              New World". It sometimes uses its tassels as hands and feet to
-              accentuate its feelings.' }, { charName: "The Sultan",
-              firstAppearance: "Alladin (1992)", createdBy: "Navid Negahban",
-              voicedBy: "Douglas Seale", desc: "The Sultan (real name: Hamed
-              Bobolonius II) is Princess Jasmine's father and the pompous but
-              kind ruler of Agrabah. Some aspects of the character were inspired
-              in the Wizard of Oz, to create a bumbling authority figure. He was
-              voiced by Douglas Seale in the first film, by Val Bettin in the
-              sequels and the TV series, and by Jeff Bennett in Disney Princess
-              Enchanted Tales: Follow Your Dreams. In the 2019 film, the Sultan
-              was protrayed by Navid Negahban." } ], } }
-            </div>
-            <p>
-              Initialize modal window.
-              <a
-                href="https://materializecss.com/modals.html#initialization"
-                target="_blank"
-                >More info</a
-              >.
-            </p>
-            <div language="javascript">
-              mounted() { document.addEventListener("DOMContentLoaded",
-              function() { var elems = document.querySelectorAll(".modal"); var
-              instances = M.Modal.init(elems); }); }
-            </div>
-            <p>
-              Define method which fires up after click on a row and setting up
-              modal window content.
-            </p>
-            <div language="javascript">
-              methods: { onRowClick: function(row) { this.currentModalTitle =
-              row.charName; this.currentModalText = this.tableRows3.find( x =>
-              x.charName === row.charName ).desc; var elem =
-              document.querySelectorAll(".modal")[0]; var instance =
-              M.Modal.getInstance(elem); instance.open(); } }
-            </div>
-            <datatable
-              title="Click on row!"
-              :columns="tableColumns1"
-              :rows="tableRows3"
-              @row-click="onRowClick"
-            />
-          </div>
-        </div>
         <div
           id="custom-pagination"
           class="row scrollspy"
@@ -310,73 +147,8 @@
             />
           </div>
         </div>
-        <div id="loading" class="row scrollspy" style="margin-bottom: 0;">
-          <div
-            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-          >
-            <h3 class="header">
-              Loading animation
-            </h3>
-            <p>Table with empty array of rows</p>
-            <div language="html">
-              &lt;datatable title="Table with loading animation"
-              :columns="tableColumns1" :rows="[]" :perPage="[3, 5, 10]" /&gt;
-            </div>
-            <datatable
-              title="Table with loading animation"
-              :columns="tableColumns1"
-              :rows="[]"
-              :per-page="[3, 5, 10]"
-            />
-          </div>
-        </div>
+
         <div id="row-buttons" class="row scrollspy" style="margin-bottom: 0;">
-          <div
-            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-          >
-            <h3 class="header">
-              Row buttons
-            </h3>
-            <p>Table with delete buttons on every row.</p>
-            <div language="html">
-              &lt;datatable title="Do not press the red buttons!"
-              :columns="tableColumns1" :rows="tableRows5"&gt; &lt;th
-              slot="thead-tr"&gt; Actions &lt;/th&gt; &lt;template
-              slot="tbody-tr" scope="props"&gt; &lt;td&gt; &lt;button class="btn
-              red darken-2 waves-effect waves-light compact-btn" @click="e =>
-              deleteItem(props.row, e)"&gt; &lt;i class="material-icons
-              white-text"&gt;delete&lt;/i&gt; &lt;/button&gt; &lt;/td&gt;
-              &lt;/template&gt; &lt;/datatable&gt;
-            </div>
-            <div language="javascript">
-              data() { return { tableRows5: [ { charName: "Abu",
-              firstAppearance: "Alladin (1992)", createdBy: "Joe Grant",
-              voicedBy: "Frank Welker" }, { charName: "Magic Carpet",
-              firstAppearance: "Alladin (1992)", createdBy: "Randy Cartwright",
-              voicedBy: "N/A" }, { charName: "The Sultan", firstAppearance:
-              "Alladin (1992)", createdBy: "Navid Negahban", voicedBy: "Douglas
-              Seale" } ] } }
-            </div>
-            <datatable
-              title="Do not press the red buttons!"
-              :columns="tableColumns1"
-              :rows="tableRows5"
-            >
-              <th slot="thead-tr">
-                Actions
-              </th>
-              <template slot="tbody-tr" scope="props">
-                <td>
-                  <button
-                    class="btn red darken-2 waves-effect waves-light compact-btn"
-                    @click="(e) => deleteItem(props.row, e)"
-                  >
-                    <i class="material-icons white-text">delete</i>
-                  </button>
-                </td>
-              </template>
-            </datatable>
-          </div>
           <div id="row-buttons" class="row scrollspy" style="margin-bottom: 0;">
             <div
               class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
@@ -452,6 +224,10 @@ import DataTable from 'vuejs-datatable';
 // import Prism from 'vue-prism-component';
 import BasicTable from './BasicTable';
 import ClickableTable from './ClickableTable';
+import MinimalTable from './MinimalTable';
+import TableWithButtons from './TableWithButtons';
+import TableWithCheckboxes from './TableWithCheckboxes';
+import CustomizedTable from './CustomizedTable';
 
 export default {
   name: 'Index',
@@ -459,202 +235,19 @@ export default {
   components: {
     DataTable,
     BasicTable,
-    ClickableTable
+    ClickableTable,
+    MinimalTable,
+    TableWithButtons,
+    TableWithCheckboxes,
+    CustomizedTable,
   },
-
   data() {
-    const self = this;
-
     return {
-      currentModalTitle: '',
-      currentModalText: '',
-      tableColumns1: [
-        {
-          label: 'Character name',
-          field: 'charName',
-          numeric: false,
-          html: false,
-        },
-        {
-          label: 'First appearance',
-          field: 'firstAppearance',
-          numeric: false,
-          html: false,
-        },
-        {
-          label: 'Created by',
-          field: 'createdBy',
-          numeric: false,
-          html: false,
-        },
-        {
-          label: 'Voiced by',
-          field: 'voicedBy',
-          numeric: false,
-          html: false,
-        },
-      ],
-      tableRows1: [
-        {
-          charName: 'Abu',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Joe Grant',
-          voicedBy: 'Frank Welker',
-        },
-        {
-          charName: 'Magic Carpet',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Randy Cartwright',
-          voicedBy: 'N/A',
-        },
-        {
-          charName: 'The Sultan',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Navid Negahban',
-          voicedBy: 'Douglas Seale',
-        },
-      ],
-      tableRows2: [
-        {
-          charName: 'Abu',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Joe Grant',
-          voicedBy: 'Frank Welker',
-        },
-        {
-          charName: 'Magic Carpet',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Randy Cartwright',
-          voicedBy: 'N/A',
-        },
-        {
-          charName: 'The Sultan',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Navid Negahban',
-          voicedBy: 'Douglas Seale',
-        },
-      ],
-      tableRows3: [
-        {
-          charName: 'Abu',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Joe Grant',
-          voicedBy: 'Frank Welker',
-          desc:
-            "Abu is Aladdin's kleptomaniac monkey partner with a high-pitched voice and can talk a little. The animators filmed monkeys at the San Francisco Zoo to study the movements Abu would have. The character is based on the similarly named Abu the thief, played by Sabu Dastagir in the 1940 version of The Thief of Bagdad. Abu also appears in Kingdom Hearts and Kingdom Hearts II, playing a large role in the latter with his kleptomanic habits getting him into trouble during Sora's first return visit to Agrabah.",
-        },
-        {
-          charName: 'Magic Carpet',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Randy Cartwright',
-          voicedBy: 'N/A',
-          desc:
-            'The Magic Carpet is an ancient carpet that was found by Aladdin in the Cave of Wonders treasure room. It is a character without a voice, and expresses itself entirely through pantomime and movements. It is genderless, but is often assumed to be male by Genie and other characters. It is playful, as it reacts with Abu, intelligent, as it beats Genie at chess (and most other things), and helpful, as it helps Aladdin romance Princess Jasmine during the song "A Whole New World". It sometimes uses its tassels as hands and feet to accentuate its feelings.',
-        },
-        {
-          charName: 'The Sultan',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Navid Negahban',
-          voicedBy: 'Douglas Seale',
-          desc:
-            "The Sultan (real name: Hamed Bobolonius II) is Princess Jasmine's father and the pompous but kind ruler of Agrabah. Some aspects of the character were inspired in the Wizard of Oz, to create a bumbling authority figure. He was voiced by Douglas Seale in the first film, by Val Bettin in the sequels and the TV series, and by Jeff Bennett in Disney Princess Enchanted Tales: Follow Your Dreams. In the 2019 film, the Sultan was protrayed by Navid Negahban.",
-        },
-      ],
-      tableRows4: [
-        {
-          charName: 'Abu',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Joe Grant',
-          voicedBy: 'Frank Welker',
-        },
-        {
-          charName: 'Magic Carpet',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Randy Cartwright',
-          voicedBy: 'N/A',
-        },
-        {
-          charName: 'The Sultan',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Navid Negahban',
-          voicedBy: 'Douglas Seale',
-        },
-        {
-          charName: 'Razoul',
-          firstAppearance: 'Alladin (1992)',
-          voicedBy: 'Jim Cummings',
-        },
-        {
-          charName: 'Fazahl',
-          firstAppearance: 'Alladin (1992)',
-          voicedBy: 'Jim Cummings',
-        },
-        {
-          charName: 'Hakim',
-          firstAppearance: 'Alladin (1992)',
-          voicedBy: 'Numan Acar',
-        },
-        {
-          charName: 'Zagoolien',
-          firstAppearance: 'Alladin (1992)',
-          voicedBy: 'Jeff Bennett',
-        },
-        {
-          charName: 'The Peddler',
-          firstAppearance: 'Alladin (1992)',
-          voicedBy: 'Frank Welker',
-        },
-      ],
-      tableRows5: [
-        {
-          charName: 'Abu',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Joe Grant',
-          voicedBy: 'Frank Welker',
-        },
-        {
-          charName: 'Magic Carpet',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Randy Cartwright',
-          voicedBy: 'N/A',
-        },
-        {
-          charName: 'The Sultan',
-          firstAppearance: 'Alladin (1992)',
-          createdBy: 'Navid Negahban',
-          voicedBy: 'Douglas Seale',
-        },
-      ],
     };
   },
   methods: {
-    deleteItem(row, e) {
-      var index = this.tableRows5.findIndex((x) => x.charName === row.charName);
-      this.tableRows5.splice(index, 1);
-    },
-    onRowClick: function(row) {
-      this.currentModalTitle = row.charName;
-      this.currentModalText = this.tableRows3.find(
-        (x) => x.charName === row.charName
-      ).desc;
-      var elem = document.querySelectorAll('.modal')[0];
-      var instance = M.Modal.getInstance(elem);
-      instance.open();
-    },
   },
   mounted() {
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems);
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.modal');
-      var instances = M.Modal.init(elems);
-    });
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.scrollspy');
-      var instances = M.ScrollSpy.init(elems /*, {scrollOffset: 200}*/);
-    });
   },
 };
 </script>
