@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <a
-      href="https://github.com/MicroDroid/vue-materialize-datatable"
+      href="https://github.com/TimothyMee/vuejs-customizable-datatable"
       class="github-corner"
       aria-label="View source on GitHub"
       ><svg
@@ -31,211 +31,84 @@
             <!-- Sidebar -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                    <h3>Table of Content</h3>
+                    <h3 style="color:white">Table of Content</h3>
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 3</a>
-                            </li>
-                        </ul>
+                    <li :class="active === 'basic'? 'active': ''">
+                        <a href="#basic-table" @click="navigate('basic')">Basic Table</a>
                     </li>
-                    <li>
-                        <a href="#">About</a>
+                    <li :class="active === 'clickable'? 'active': ''">
+                        <a href="#clickable-table" @click="navigate('clickable')">Clickable Table</a>
                     </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
+                    <li :class="active === 'minimal'? 'active': ''">
+                        <a href="#minimal-table" @click="navigate('minimal')">Minimal Table</a>
                     </li>
-                    <li>
-                        <a href="#">Portfolio</a>
+                    <li :class="active === 'buttons'? 'active': ''">
+                        <a href="#buttons-table" @click="navigate('buttons')">Table With Buttons</a>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
+                    <li :class="active === 'select'? 'active': ''">
+                        <a href="#select-table" @click="navigate('select')">Select Table</a>
+                    </li>
+                    <li :class="active === 'customized'? 'active': ''">
+                        <a href="#customized-table" @click="navigate('customized')">Customized Table</a>
+                    </li>
+                    <li :class="active === 'loading'? 'active': ''">
+                        <a href="#loading-animation-table" @click="navigate('loading')">Loading Animation Table</a>
+                    </li>
+                    <li :class="active === 'paginated'? 'active': ''">
+                        <a href="#custom-paginated-table" @click="navigate('paginated')">Custom Paginated Table</a>
                     </li>
                 </ul>
             </nav>
         </div>
         </div>
         <div class="col-md-8">
-           <div
-            class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-          >
-            <div>
-              <basic-table></basic-table>
-            </div>
-            <div>
-              <clickable-table></clickable-table>
-            </div>
-            <div>
-              <minimal-table></minimal-table>
-            </div>
-            <div>
-              <table-with-buttons></table-with-buttons>
-            </div>
-            <div>
-              <table-with-checkboxes></table-with-checkboxes>
-            </div>
-            <div>
-              <customized-table></customized-table>
-            </div>
-            <div>
-              <Loading-animation-table></Loading-animation-table>
-            </div>
-            <div>
-              <custom-pagination-table></custom-pagination-table>
-            </div>
-          </div>
-        </div>
-    </div>
-    <header>
-      <div class="container">
-        <a
-          href="#"
-          data-target="nav-mobile"
-          class="top-nav sidenav-trigger waves-effect waves-light circle hide-on-large-only"
-          ><i class="material-icons">menu</i></a
-        >
-      </div>
-      <ul id="nav-mobile" class="sidenav sidenav-fixed">
-        <li class="bold">
-          <a href="#basic" class="waves-effect waves-teal">Basic Example</a>
-        </li>
-        <li class="bold">
-          <a href="#minimal" class="waves-effect waves-teal">Minimal table</a>
-        </li>
-        <li class="bold">
-          <a href="#localization" class="waves-effect waves-teal"
-            >Localization</a
-          >
-        </li>
-        <li class="bold">
-          <a href="#interactive" class="waves-effect waves-teal"
-            >Interactive rows</a
-          >
-        </li>
-        <li class="bold">
-          <a href="#custom-pagination" class="waves-effect waves-teal"
-            >Custom pagination</a
-          >
-        </li>
-        <li class="bold">
-          <a href="#row-buttons" class="waves-effect waves-teal">Row buttons</a>
-        </li>
-      </ul>
-    </header>
-
-    <!-- Page Layout here -->
-    <main>
-      <div id="index-banner" class="section">
-        <div class="container">
-          <div class="row" style="margin-bottom: 0;">
-            <div
-              class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-            >
-              <h1 class="header mt10">
-                vue-customizable-datatable demo page
-              </h1>
-              <h4 class="light">
-                Various examples with VueJS customizable datatable
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div id="minimal" class="row scrollspy" style="margin-bottom: 0;">
-         
-        </div>
-
-        <div id="row-buttons" class="row scrollspy" style="margin-bottom: 0;">
-          <div id="row-buttons" class="row scrollspy" style="margin-bottom: 0;">
-            <div
-              class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
-            >
-              <h1 class="header">
-                Links
-              </h1>
-              <div class="collection">
-                <a
-                  href="https://github.com/MicroDroid/vue-materialize-datatable"
-                  class="collection-item"
-                  >vue-materialize-datatable</a
-                >
-                <a
-                  href="https://github.com/MicroDroid/vue-materialize-datatable"
-                  class="collection-item"
-                  >Materialize</a
-                >
-                <a
-                  href="https://github.com/MicroDroid/vue-materialize-datatable"
-                  class="collection-item"
-                  >Materialize modals</a
-                >
-                <a
-                  href="https://github.com/MicroDroid/vue-materialize-datatable"
-                  class="collection-item"
-                  >Materialize scrollspy</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="page-footer docs-footer">
-      <div class="container">
-        <div class="row" style="margin-bottom: 0;">
+          <h1>Vue Customizable DataTable</h1>
+          <h4>A demo of the vue customizable datatable in full flow</h4>
           <div
             class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
           >
-            <div class="left valign-wrapper date">
-              2019
+            <div id="basic-table">
+              <basic-table></basic-table>
             </div>
-            <div class="right grey-text text-darken-1 right">
-              vue-materialize-datatable author -
-              <a href="https://github.com/MicroDroid" target="_blank"
-                >MicroDroid</a
-              >
+            <div id="clickable-table">
+              <clickable-table></clickable-table>
             </div>
-            <br />
-            <div class="right grey-text text-darken-1 right">
-              author of this page -
-              <a href="https://github.com/justice47" target="_blank"
-                >justice47</a
-              >
+            <div id="minimal-table">
+              <minimal-table></minimal-table>
+            </div>
+            <div id="buttons-table">
+              <table-with-buttons></table-with-buttons>
+            </div>
+            <div id="select-table">
+              <table-with-checkboxes></table-with-checkboxes>
+            </div>
+            <div id="customized-table">
+              <customized-table></customized-table>
+            </div>
+            <div id="loading-animation-table">
+              <Loading-animation-table></Loading-animation-table>
+            </div>
+            <div id="custom-paginated-table">
+              <custom-pagination-table></custom-pagination-table>
             </div>
           </div>
+
+          <footer style="margin-top:50px;">
+            <div class="container row">
+                <div class="col-md-8">
+                  author of this page -
+                  <a href="https://github.com/TimothyMee/vuejs-customizable-datatable" target="_blank"
+                    >TimothyMee</a
+                  >
+                  &copy; 2020
+                </div>
+            </div>
+          </footer>
         </div>
-        <!--<div class="row" style="margin-bottom: 0;">
-          <div class="col s12 m10 offset-m1">
-
-          <a class="grey-text text-darken-1 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">MIT License</a>
-
-          </div>
-        </div> -->
-      </div>
-    </footer>
+    </div>
+    
   </div>
 </template>
 
@@ -267,9 +140,13 @@ export default {
   },
   data() {
     return {
+      active:"basic"
     };
   },
   methods: {
+    navigate(name) {
+      this.active = name;
+    }
   },
   mounted() {
   },
