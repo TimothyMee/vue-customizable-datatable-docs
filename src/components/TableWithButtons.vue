@@ -95,7 +95,7 @@ data() {
 </template>
 
 <script>
-import DataTable from 'vuejs-datatable';
+import DataTable from 'vue-customizable-datatable';
 import VueMarkdown from 'vue-markdown';
 export default {
   data() {

@@ -113,7 +113,7 @@
 </template>
 
 <script>
-import DataTable from 'vuejs-datatable';
+import DataTable from 'vue-customizable-datatable';
 // import Prism from 'vue-prism-component';
 import BasicTable from './BasicTable';
 import ClickableTable from './ClickableTable';
