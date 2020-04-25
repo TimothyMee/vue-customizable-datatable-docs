@@ -35,6 +35,9 @@
                 </div>
 
                 <ul class="list-unstyled components">
+                  <li :class="active === 'installation'? 'active': ''">
+                        <a href="#installation" @click="navigate('installation')">Installation & Usage</a>
+                    </li>
                     <li :class="active === 'basic'? 'active': ''">
                         <a href="#basic-table" @click="navigate('basic')">Basic Table</a>
                     </li>
@@ -69,7 +72,36 @@
           <div
             class="col s12 m8 offset-m1 xl11 offset-xl1 center-on-small-only"
           >
+            <div id="installation">
+                <vue-markdown 
+                  source='## Installation
+
+```bash
+npm i vue-customizable-datatable --save
+```
+
+## Usage
+
+Include the component,
+
+```javascript
+import DataTable from "vue-customizable-datatable";
+```
+Then, register the component, however you like:
+
+```javascript
+{
+    ...
+    components: {
+        ...
+        DataTable
+    }
+}'
+                >
+                  </vue-markdown>
+            </div>
             <div id="basic-table">
+              <br><br><br>
               <basic-table></basic-table>
             </div>
             <div id="clickable-table">
@@ -123,6 +155,8 @@ import TableWithCheckboxes from './TableWithCheckboxes';
 import CustomizedTable from './CustomizedTable';
 import LoadingAnimationTable from './LoadingAnimationTable';
 import CustomPaginationTable from './CustomPaginationTable';
+import VueMarkdown from 'vue-markdown';
+
 
 export default {
   name: 'Index',
@@ -136,7 +170,8 @@ export default {
     TableWithCheckboxes,
     CustomizedTable,
     LoadingAnimationTable,
-    CustomPaginationTable
+    CustomPaginationTable,
+    VueMarkdown
   },
   data() {
     return {
