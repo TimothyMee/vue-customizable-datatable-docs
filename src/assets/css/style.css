@@ -1,0 +1,250 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+::-webkit-scrollbar {
+    width: 9px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+    background: #64686a;
+    border-radius: 4px;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.custom-blue {
+    color: #fff;
+    background-color: #06187E;
+    border-color: #06187E;
+}
+
+.text-custom-blue {
+    color: #06187E;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+#menu {
+    background: #06187E;
+    min-height: 949px;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #06187E;
+    color: #fff;
+    transition: all 0.3s;
+    border: 1px solid #d6d6d6;
+    height: 949px;
+    overflow-y: scroll;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #06187E;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #FFB901;
+    background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+    color: #FFB901;
+    background: #fff;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#sidebar ul ul a {
+    font-size: 0.9em;
+    padding-left: 30px;
+    background: #06187E;
+}
+
+#sidebar ul ul ul a {
+    font-size: 0.9em;
+    padding-left: 60px;
+    background: #06187E;
+}
+
+ul ul a {
+    font-size: 0.9em;
+    padding-left: 30px;
+    background: #293134;
+}
+
+a.download {
+    background: #fff;
+    color: #293134;
+}
+
+a.article,
+a.article:hover {
+    background: #64686a;
+    color: #fff;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+.content {
+    width: 100%;
+    padding-bottom: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    background-color: #FBFBFD;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
+
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+.border-radius-xl {
+    border-radius: 1.3rem !important;
+}
+
+.border-radius-xxl {
+    border-radius: 8.85rem !important;
+}
+
+.tabs {
+    position: relative;
+    margin: 0 auto;
+}
+
+.tabs__item {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 10px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    color: gray;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+.tabs__item_active {
+    color: black;
+}
+
+.tabs__item:hover {
+    border-bottom: 2px solid gray;
+    color: black;
+}
+
+.tabs__item:focus {
+    outline: none;
+    border-bottom: 2px solid gray;
+    color: black;
+}
+
+.tabs__item:first-child {
+    margin-left: 0;
+}
+
+.tabs__item:last-child {
+    margin-right: 0;
+}
+
+.tabs__active-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: black;
+    transition: transform 0.4s ease, width 0.4s ease;
+}
+
+.bg-gray-300-important {
+    background-color: #e2e8f0 !important;
+}
+
+.bg-gray-400-important {
+    background-color: #cbd5e0 !important;
+}
+.border-blue-900-important {
+    border-color: #2a4365 !important;
+}
+.background-image-inherit {
+    background-image: unset !important;
+}
+
+.dropzone {
+    border: 2px dashed !important;
+}
