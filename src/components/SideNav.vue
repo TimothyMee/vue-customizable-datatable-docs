@@ -94,7 +94,6 @@ export default {
         },
         toggleSidenav() {
             this.sideNavActive = !this.sideNavActive
-            console.log(this.sideNavActive);
         }
     },
     mounted() {
