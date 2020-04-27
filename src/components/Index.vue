@@ -25,11 +25,11 @@
         /></svg
     ></a>
 
-    <div class="col-md-12 row">
-        <div class="col-md-4">
+    <div class="wrapper">
+        <div id="menu">
           <side-nav></side-nav>
         </div>
-        <div class="col-md-8">
+        <div class="content">
           <h1>Vue Customizable DataTable</h1>
           <h4>A demo of the vue customizable datatable in full flow</h4>
           <div
